@@ -1,0 +1,82 @@
+.header {
+  height: 56px;
+  margin-bottom: 120px;
+  background-color: var(--mantine-color-body);
+  border-bottom: 1px solid var(--mantine-color-dark-4);
+}
+
+.inner {
+  height: 100px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.link {
+  display: block;
+  line-height: 1;
+  padding: 8px 12px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--mantine-color-white);
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 500;
+  font-size: 20px;
+  transition-property: background-color;
+  transition-duration: 0.25s;
+  transition-delay: 0;
+  text-align: center;
+  margin: auto;
+  
+  @mixin hover {
+    background-color: var(--mantine-color-indigo-6);
+  }
+  
+  focus {
+    background-color: var(--mantine-color-indigo-6);
+  }
+
+  /* [data-mantine-color-scheme] &[data-active] {
+    background-color: var(--mantine-color-blue-filled);
+    color: var(--mantine-color-white);
+  } */
+}
+
+.burger {
+  display: block;
+  z-index: 201;
+}
+
+.modal {
+  --modal-content-flex: 0 0 100%;
+  --modal-content-height: 100dvh;
+  --modal-size: 50%;
+  /* position: fixed; */
+}
+
+.modalContent {
+  /* background-color: var(--mantine-color-teal-8); */
+  background: -moz-linear-gradient(0deg, var(--mantine-color-teal-6) 40%, var(--mantine-color-teal-3) 100%);
+  background: -webkit-linear-gradient(0deg, var(--mantine-color-teal-6) 40%, var(--mantine-color-teal-3) 100%);
+  background: linear-gradient(0deg, var(--mantine-color-teal-6) 40%, var(--mantine-color-teal-3) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--mantine-color-teal-6)",endColorstr="var(--mantine-color-teal-3)",GradientType=1);
+}
+
+.modalInner {
+  max-width: 50%;
+  right: 0;
+  padding: 0;
+}
+
+.modalContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalBody {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto; 
+  height: 35%;
+}

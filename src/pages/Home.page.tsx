@@ -1,11 +1,15 @@
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
-import { Welcome } from '../components/Welcome/Welcome';
+import Welcome from '../components/Welcome/Welcome';
+import Header from '@/components/Header/Header';
+import { theme } from '@/theme';
 
-export function HomePage() {
-  return (
-    <>
-      <Welcome />
-      <ColorSchemeToggle />
-    </>
-  );
+
+const HomePage: React.FC = () => {
+	return (
+		<>
+			<Header />
+			<Welcome />
+		</>
+	);
 }
+
+export default HomePage;

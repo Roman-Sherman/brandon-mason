@@ -20,6 +20,7 @@
   "dependencies": {
     "@mantine/core": "7.14.1",
     "@mantine/hooks": "7.14.1",
+    "@mantine/styles": "^6.0.22",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0"

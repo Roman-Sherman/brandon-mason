@@ -1,0 +1,18 @@
+:root {
+    --mantine-color-delftblue-1: #34435E;
+    --mantine-color-delftblue-2: #41557B;
+}
+
+body {
+    background: -moz-linear-gradient(180deg, var(--mantine-color-teal-4) 50%, var(--mantine-color-teal-1) 100%);
+    background: -webkit-linear-gradient(180deg, var(--mantine-color-teal-4) 50%, var(--mantine-color-teal-1) 100%);
+    background: linear-gradient(180deg, var(--mantine-color-teal-4) 50%, var(--mantine-color-teal-1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--mantine-color-teal-4)",endColorstr="var(--mantine-color-teal-1)",GradientType=1);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}

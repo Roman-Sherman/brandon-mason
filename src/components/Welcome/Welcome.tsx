@@ -1,16 +1,17 @@
-import { Anchor, Text, Title } from '@mantine/core';
+import { Anchor, Text, Title, useMantineTheme } from '@mantine/core';
 import classes from './Welcome.module.css';
+import { theme }  from '../../theme';
 
-export function Welcome() {
+const Welcome: React.FC = () => {
   return (
     <>
       <Title className={classes.title} ta="center" mt={100}>
         Welcome to{' '}
-        <Text inherit variant="gradient" component="span" gradient={{ from: 'pink', to: 'yellow' }}>
+        <Text inherit variant="gradient" component="span" gradient={{ from: 'pink', to: 'yellow' }} className={classes.text} style={{ color: theme.colors?.delftBlue?.[2] ?? 'initial' }}>
           Mantine
         </Text>
       </Title>
-      <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl">
+      <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl" className={classes.text} style={{ color: theme.colors?.delftBlue?.[2] ?? 'initial' }}>
         This starter Vite project includes a minimal setup, if you want to learn more on Mantine +
         Vite integration follow{' '}
         <Anchor href="https://mantine.dev/guides/vite/" size="lg">
@@ -21,3 +22,5 @@ export function Welcome() {
     </>
   );
 }
+
+export default Welcome;

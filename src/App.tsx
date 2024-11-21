@@ -1,13 +1,16 @@
 import '@mantine/core/styles.css';
+import './global.css';
 
 import { MantineProvider } from '@mantine/core';
-import { Router } from './Router';
+import Router from './Router';
 import { theme } from './theme';
 
-export default function App() {
+const App: React.FC = () => {
   return (
     <MantineProvider theme={theme}>
       <Router />
     </MantineProvider>
   );
 }
+
+export default App;
