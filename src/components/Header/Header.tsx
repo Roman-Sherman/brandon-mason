@@ -8,7 +8,7 @@ const links = [
     { link: '/#about', label: 'About' },
     { link: '/#projects', label: 'Projects' },
     { link: '/#contact', label: 'Contact' },
-    { link: '/#resume', label: 'Resume' },
+    { link: 'https://docs.google.com/document/d/1eLmBdKL05E2HDpKKtzlpqAieiYgKA0BGCdweTQUlebw/preview', label: 'Resume' },
   ];
 
 const Header: React.FC = () => {

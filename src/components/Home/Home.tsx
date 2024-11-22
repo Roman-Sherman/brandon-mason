@@ -1,8 +1,8 @@
-import { Anchor, Text, Title, useMantineTheme } from '@mantine/core';
-import classes from './Welcome.module.css';
+import { Anchor, Text, Title } from '@mantine/core';
+import classes from './Home.module.css';
 import { theme }  from '../../theme';
 
-const Welcome: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <>
       <Title className={classes.title} ta="center" mt={100}>
@@ -23,4 +23,4 @@ const Welcome: React.FC = () => {
   );
 }
 
-export default Welcome;
+export default Home;
