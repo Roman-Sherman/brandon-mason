@@ -17,10 +17,10 @@ const links: Link[] = [
   ];
 
 interface HeaderProps {
-    scrolled: boolean;
+    scroll: { x: number; y: number };
 }
 
-const Header: React.FC<HeaderProps> = ({ scrolled }) => {
+const Header: React.FC<HeaderProps> = ({ scroll }) => {
     const [opened, { open, close }] = useDisclosure();
 
     const items = links.map((link) => (
@@ -36,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
 
     return (
         <>
-            <header id="header" style={{ boxShadow: scrolled ? 'rgba(0, 0, 0, 0.15) 0px 3px 8px 0px' : 'none' }}>
+            <header id="header" style={{ boxShadow: (scroll.y > 0) ? 'rgba(0, 0, 0, 0.15) 0px 3px 8px 0px' : 'none' }}>
                 <Container className={classes.inner} fluid >
                     <Group gap={5} visibleFrom="xs">
                     {items}
