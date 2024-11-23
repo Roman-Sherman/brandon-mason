@@ -4,22 +4,21 @@ import { theme }  from '../../theme';
 
 const Home: React.FC = () => {
   return (
-    <>
-      <Title className={classes.title} ta="center" mt={100}>
-        Welcome to{' '}
-        <Text inherit variant="gradient" component="span" gradient={{ from: 'pink', to: 'yellow' }} className={classes.text} style={{ color: theme.colors?.delftBlue?.[2] ?? 'initial' }}>
-          Mantine
-        </Text>
-      </Title>
-      <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl" className={classes.text} style={{ color: theme.colors?.delftBlue?.[2] ?? 'initial' }}>
-        This starter Vite project includes a minimal setup, if you want to learn more on Mantine +
-        Vite integration follow{' '}
+    <div id='#home'>
+      <Text c="dimmed" size="lg" maw={580} mt="xl" className={classes.text} style={{ color: theme.colors?.delftBlue?.[2] ?? 'initial' }}>
+        Hi there! My name is{' '}
+      </Text>
+      <Text className={classes.title}>
+        Brandon <br></br>Mason{' '}
+      </Text>
+      <Text c="dimmed" ta="center" size="lg" maw={580} mt="xl" className={classes.text} style={{ color: theme.colors?.delftBlue?.[2] ?? 'initial' }}>
+        My name is Brandon Mason{' '}
         <Anchor href="https://mantine.dev/guides/vite/" size="lg">
           this guide
         </Anchor>
         . To get started edit pages/Home.page.tsx file.
       </Text>
-    </>
+    </div>
   );
 }
 
