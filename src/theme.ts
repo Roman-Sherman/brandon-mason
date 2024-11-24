@@ -15,6 +15,12 @@ export const theme = createTheme({
       "#34435E",
       "#34435E",
     ],
-
-  }
+  },
+  breakpoints: {
+    // xs: '30em',
+    sm: '414px',
+    md: '415px',
+    lg: '1280px',
+    // xl: '90em',
+  },
 });

@@ -1,38 +1,15 @@
 :root {
     --mantine-color-delftblue-1: #34435E;
     --mantine-color-delftblue-2: #41557B;
+    --mantine-color-mint: #5CAB7D;
+    --mantine-color-viridian: #45825E;
 }
 
 body {
-    background: -moz-linear-gradient(180deg, var(--mantine-color-cyan-9) 50%, var(--mantine-color-cyan-7) 100%);
-    background: -webkit-linear-gradient(180deg, var(--mantine-color-cyan-9) 50%, var(--mantine-color-cyan-7) 100%);
-    background: linear-gradient(180deg, var(--mantine-color-cyan-9) 50%, var(--mantine-color-cyan-7) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--mantine-color-cyan-9)",endColorstr="var(--mantine-color-cyan-7)",GradientType=1);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: var(--mantine-color-cyan-4);
-}
-
-html {
-    /* overflow-y: scroll; */
-    scrollbar-color: white;
-    scrollbar-width: thin;
-    scroll-behavior: smooth;
+    background-color: var(--mantine-color-mint);
 }
 
 html, body {
     height: 100%;
     margin: 0;
-}
-
-#root {
-    background: -moz-linear-gradient(180deg, var(--mantine-color-cyan-9) 50%, var(--mantine-color-cyan-7) 100%);
-    background: -webkit-linear-gradient(180deg, var(--mantine-color-cyan-9) 50%, var(--mantine-color-cyan-7) 100%);
-    background: linear-gradient(180deg, var(--mantine-color-cyan-9) 50%, var(--mantine-color-cyan-7) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--mantine-color-cyan-9)",endColorstr="var(--mantine-color-cyan-7)",GradientType=1);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.main {
 }

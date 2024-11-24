@@ -1,10 +1,16 @@
 header {
   position: sticky;
   top: 0;
+  right: 0;
+  width: 100%;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(10px);
   background-color: rgba(var(--mantine-color-cyan-9), .8);
   transition: box-shadow .25s ease-in-out;
+}
+
+header::hover {
+  z-index: 200;
 }
 
 .header {
@@ -44,11 +50,6 @@ header {
   focus {
     background-color: var(--mantine-color-indigo-6);
   }
-
-  /* [data-mantine-color-scheme] &[data-active] {
-    background-color: var(--mantine-color-blue-filled);
-    color: var(--mantine-color-white);
-  } */
 }
 
 .burger {
@@ -64,11 +65,7 @@ header {
 }
 
 .modalContent {
-  /* background-color: var(--mantine-color-teal-8); */
-  background: -moz-linear-gradient(0deg, var(--mantine-color-teal-6) 40%, var(--mantine-color-teal-3) 100%);
-  background: -webkit-linear-gradient(0deg, var(--mantine-color-teal-6) 40%, var(--mantine-color-teal-3) 100%);
-  background: linear-gradient(0deg, var(--mantine-color-teal-6) 40%, var(--mantine-color-teal-3) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--mantine-color-teal-6)",endColorstr="var(--mantine-color-teal-3)",GradientType=1);
+  background-color: var(--mantine-color-viridian);
 }
 
 .modalInner {
@@ -88,4 +85,13 @@ header {
   grid-template-columns: auto;
   grid-template-rows: auto; 
   height: 35%;
+}
+
+.filler {
+  display: inline-block; 
+  margin: 0; 
+  text-align: center;
+  line-height: 56px;
+  width: 150px;
+  margin: 23px 0;
 }

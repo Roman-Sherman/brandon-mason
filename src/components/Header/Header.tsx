@@ -1,6 +1,7 @@
 import { Burger, Container, Group, Modal, Button } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './Header.module.css';
+import { useEffect } from 'react';
 
 interface Link {
     link: string;
@@ -17,7 +18,7 @@ const links: Link[] = [
   ];
 
 interface HeaderProps {
-    scroll: { x: number; y: number };
+    scroll: boolean;
 }
 
 const Header: React.FC<HeaderProps> = ({ scroll }) => {
@@ -36,7 +37,7 @@ const Header: React.FC<HeaderProps> = ({ scroll }) => {
 
     return (
         <>
-            <header id="header" style={{ boxShadow: (scroll.y > 0) ? 'rgba(0, 0, 0, 0.15) 0px 3px 8px 0px' : 'none' }}>
+            <header id="header" style={{ boxShadow: (scroll) ? 'rgba(0, 0, 0, 0.15) 0px 3px 8px 0px' : 'none' }}>
                 <Container className={classes.inner} fluid >
                     <Group gap={5} visibleFrom="xs">
                     {items}

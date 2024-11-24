@@ -1,0 +1,22 @@
+.scrollbar {
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 300;
+    position: relative;
+    background-color: transparent;
+  }
+  
+  .scrollbar::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  .scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--mantine-color-blue-2);
+    border-radius: 6px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
