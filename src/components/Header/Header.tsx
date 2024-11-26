@@ -1,7 +1,6 @@
-import { Burger, Container, Group, Modal, Button } from '@mantine/core';
+import { Burger, Container, Group, Modal } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './Header.module.css';
-import { useEffect } from 'react';
 
 interface Link {
     link: string;

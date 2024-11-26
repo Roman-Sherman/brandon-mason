@@ -8,15 +8,15 @@
 
     @media (max-width: 48em) {
         font-size: rem(50px);
-        line-height: rem(50px);
+        line-height: rem(20px);
     }
     @media (min-width: 48em) {
         font-size: rem(60px);
-        line-height: rem(60px);
+        line-height: rem(30px);
     }
     @media (min-width: 75em) {
         font-size: rem(75px);
-        line-height: rem(70px);
+        line-height: rem(45px);
     }
     @media (min-width: 88em) {
         font-size: rem(90px);
@@ -60,8 +60,4 @@
 
 .link {
     color: var(--mantine-color-mint);
-}
-
-.mantine-Button-root {
-    width: rem(300px);
 }

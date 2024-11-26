@@ -1,22 +1,39 @@
-.scrollbar {
+.containerRoot {
+    margin: 0 30px;
+    padding: 0;
+
+    @media (max-width: 48em) {
+        margin: 0 rem(35px);
+    }
+    @media (min-width: 48em) {
+        margin: 0 rem(50px);
+    }
+    @media (min-width: 75em) {
+        margin: 0 rem(80px);
+    }
+    @media (min-width: 88em) {
+        margin: 0 rem(90px);
+    }
+
+    a {
+        color: var(--mantine-color-cyan-6) !important;
+    }
+}
+
+
+.root {
     height: 100vh;
     overflow-y: auto;
     z-index: 300;
     position: relative;
     background-color: transparent;
-  }
-  
-  .scrollbar::-webkit-scrollbar {
-    width: 12px;
-  }
-  
-  .scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  .scrollbar::-webkit-scrollbar-thumb {
-    background-color: var(--mantine-color-blue-2);
-    border-radius: 6px;
-    border: 3px solid transparent;
-    background-clip: content-box;
-  }
+
+}
+
+.scrollbar {
+    @mixin hover {
+        @mixin where-dark {
+            background-color: transparent;
+        }
+    }
+}

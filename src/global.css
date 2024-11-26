@@ -1,8 +1,8 @@
 :root {
-    --mantine-color-delftblue-1: #34435E;
-    --mantine-color-delftblue-2: #41557B;
-    --mantine-color-mint: #5CAB7D;
+    --mantine-color-mint: #96C9AB;
     --mantine-color-viridian: #45825E;
+    --mantine-color-zomp: #569885;
+    --text-color: #51755B;
 }
 
 body {
