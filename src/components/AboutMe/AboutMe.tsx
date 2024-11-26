@@ -13,6 +13,7 @@ const AboutMe = forwardRef<MantineComponent<any>, AboutMeProps>((props, aboutRef
         <Container ref={aboutRef}>
             <Title order={2} className={classes.title}>About Me</Title>
             <Text>This is the About Me section of the portfolio.</Text>
+            <IconAccordion/>
         </Container>
     );
 });

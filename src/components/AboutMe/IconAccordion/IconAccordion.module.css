@@ -1,0 +1,60 @@
+.iconText {
+    @media (max-width: 48em) {
+        display: block;
+    }
+    @media (min-width: 48em) {
+        display: none;
+    }
+}
+
+svg {
+    display: block;
+    margin: auto;
+}
+
+.dropdown {
+    padding: 7px;
+    font-size: 10rem;
+}
+
+.colRoot {
+    text-align: center;
+    font-size: 1rem;
+    @media (max-width: 42em) {
+        --col-flex-basis: 33% !important;
+        --col-max-width: 33% !important;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    @media (min-width: 42em) {
+        --col-flex-basis: 20% !important;
+        --col-max-width: 20% !important;
+    }
+    @media (min-width: 48em) {
+        --col-flex-basis: 10% !important;
+        --col-max-width: 10% !important;
+    }
+}
+
+.accordionRoot {
+
+}
+
+.chevron {
+    color: var(--mantine-color-mint);
+}
+
+.control {
+    background-color: var(--mantine-color-viridian);
+    transition: opacity .09s ease-in-out;
+    border-radius: 5px;
+}
+
+.control:hover {
+    background-color: var(--mantine-color-viridian);
+    opacity: 0.8;   
+}
+
+.accordionItem {
+    border-bottom: none;
+}
