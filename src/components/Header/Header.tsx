@@ -1,4 +1,4 @@
-import { Burger, Container, Group, Modal } from '@mantine/core';
+import { Burger, Container, Group, MantineComponent, Modal } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './Header.module.css';
 
@@ -6,29 +6,42 @@ interface Link {
     link: string;
     label: string;
     target?: string;
+    scrollIntoView?: (ref: React.MutableRefObject<any>) => void;
+    ref?: React.MutableRefObject<any>;
 }
-
-const links: Link[] = [
-    { link: '/#home', label: 'Home' },
-    { link: '/#about', label: 'About' },
-    { link: '/#projects', label: 'Projects' },
-    { link: '/#contact', label: 'Contact' },
-    { link: 'https://docs.google.com/document/d/1AQZoarByG7TqT1GTa6TpMQrMAzRy5fyqJ4XqPzxWmjw/preview', label: 'Resume', target: '_blank' },
-  ];
 
 interface HeaderProps {
     scroll: boolean;
+    refObj: {
+        Home: React.MutableRefObject<any>;
+        About: React.MutableRefObject<any>;
+        Projects: React.MutableRefObject<any>;
+    };
+    scrollIntoView: (ref: React.MutableRefObject<any>) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ scroll }) => {
+const Header: React.FC<HeaderProps> = ({ scroll, refObj, scrollIntoView }) => {
     const [opened, { open, close }] = useDisclosure();
 
-    const items = links.map((link) => (
+    const links: Link[] = [
+        { link: '/#home', label: 'Home', ref: refObj.Home },
+        { link: '/#about', label: 'About', ref: refObj.About },
+        { link: '/#projects', label: 'Projects', ref: refObj.Projects },
+        { link: '/#contact', label: 'Contact' },
+        { link: 'https://docs.google.com/document/d/1AQZoarByG7TqT1GTa6TpMQrMAzRy5fyqJ4XqPzxWmjw/preview', label: 'Resume', target: '_blank' },
+    ];
+
+    const items: JSX.Element[] = links.map((link: Link) => (
         <a
         key={link.label}
         href={link.link}
         target={link.target}
         className={classes.link}
+        onClick={() => {
+            if (link.ref && link.ref.current) {
+                scrollIntoView((link.ref as MantineComponent<any>));
+            }
+        }}
         >
         {link.label}
         </a>

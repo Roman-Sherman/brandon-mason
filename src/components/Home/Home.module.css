@@ -2,26 +2,12 @@
     font-size: rem(16px);
 }
 
-.title {
-    color: var(--mantine-color-zomp);
-    font-size: rem(25px);
+.root {
 
-    @media (max-width: 48em) {
-        font-size: rem(50px);
-        line-height: rem(50px);
-    }
-    @media (min-width: 48em) {
-        font-size: rem(60px);
-        line-height: rem(60px);
-    }
-    @media (min-width: 75em) {
-        font-size: rem(75px);
-        line-height: rem(70px);
-    }
-    @media (min-width: 88em) {
-        font-size: rem(90px);
-        line-height: rem(50px);
-    }
+}
+
+.title {
+    
 }
 
 .introtext {
@@ -42,20 +28,7 @@
 }
 
 .text, .link {
-    font-size: rem(18px);
-
-    @media (max-width: 48em) {
-        font-size: rem(20px);
-    }
-    @media (min-width: 48em) {
-        font-size: rem(22px);
-    }
-    @media (min-width: 75em) {
-        font-size: rem(23px);
-    }
-    @media (min-width: 88em) {
-        font-size: rem(25px);
-    }
+    
 }
 
 .link {

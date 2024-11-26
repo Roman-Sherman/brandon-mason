@@ -1,6 +1,5 @@
-import { Button, Flex, MantineComponent, Stack, Text } from '@mantine/core';
+import { Button, Flex, MantineComponent, Stack, Text, Title } from '@mantine/core';
 import classes from './Home.module.css';
-import { useScrollIntoView } from '@mantine/hooks';
 import { forwardRef } from 'react';
 
 interface HomeProps {
@@ -9,11 +8,12 @@ interface HomeProps {
     scrollIntoView: (ref: React.MutableRefObject<any>) => void;
 }
 
-const Home = forwardRef<MantineComponent<any>, HomeProps>((props, buttonRef) => {
+const Home = forwardRef<MantineComponent<any>, HomeProps>((props, homeRef) => {
 
     return (
         <Flex
             mih={'100vh'}
+            ref={homeRef}
         >
             <Stack classNames={classes}
                 justify="center"
@@ -23,9 +23,9 @@ const Home = forwardRef<MantineComponent<any>, HomeProps>((props, buttonRef) => 
                 <Text className={classes.introtext}>
                 Hi there, my name is
                 </Text>
-                <Text ta="left" fw={900} className={classes.title}>
+                <Title ta="left" fw={900} className={classes.title}>
                 Brandon Mason.
-                </Text>
+                </Title>
                 <Text ta="left" className={classes.text}>
                 I am pursuing a <strong>Bachelor of Science in Computer Science</strong> degree at Texas State University. 
                 I will be graduating in December 2025, and I would love to work for your company this summer. 
@@ -33,7 +33,7 @@ const Home = forwardRef<MantineComponent<any>, HomeProps>((props, buttonRef) => 
                 <Button 
                     color={'var(--mantine-color-viridian)'} 
                     size='md'
-                    style={{width: '40%', minWidth: '260px'}}
+                    style={{width: '40%', minWidth: '260px', color: 'white', position: 'static'}}
                     ref={props.buttonRef}
                     onClick={() => props.scrollIntoView(props.projectRef)}
                 >
