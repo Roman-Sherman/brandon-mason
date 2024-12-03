@@ -16,6 +16,7 @@ interface HeaderProps {
         Home: React.MutableRefObject<any>;
         About: React.MutableRefObject<any>;
         Projects: React.MutableRefObject<any>;
+        Resume: React.MutableRefObject<any>;
     };
     scrollIntoView: (ref: React.MutableRefObject<any>) => void;
 }
@@ -27,8 +28,9 @@ const Header: React.FC<HeaderProps> = ({ scroll, refObj, scrollIntoView }) => {
         { link: '/#home', label: 'Home', ref: refObj.Home },
         { link: '/#about', label: 'About', ref: refObj.About },
         { link: '/#projects', label: 'Projects', ref: refObj.Projects },
+        { link: '/#resume', label: 'Resume', ref: refObj.Resume },
         { link: '/#contact', label: 'Contact' },
-        { link: 'https://docs.google.com/document/d/1AQZoarByG7TqT1GTa6TpMQrMAzRy5fyqJ4XqPzxWmjw/preview', label: 'Resume', target: '_blank' },
+        // { link: 'https://docs.google.com/document/d/1AQZoarByG7TqT1GTa6TpMQrMAzRy5fyqJ4XqPzxWmjw/preview', label: 'Resume', target: '_blank' },
     ];
 
     const items: JSX.Element[] = links.map((link: Link) => (
@@ -40,6 +42,7 @@ const Header: React.FC<HeaderProps> = ({ scroll, refObj, scrollIntoView }) => {
         onClick={() => {
             if (link.ref && link.ref.current) {
                 scrollIntoView((link.ref as MantineComponent<any>));
+                close();
             }
         }}
         >

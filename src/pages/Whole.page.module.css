@@ -1,6 +1,7 @@
 .containerRoot {
     margin: 0 30px;
     padding: 0;
+    scroll-margin: 75px;
 
     @media (max-width: 48em) {
         margin: 0 rem(35px);
@@ -27,7 +28,7 @@
     z-index: 300;
     position: relative;
     background-color: transparent;
-
+    scroll-padding: 75px;
 }
 
 .scrollbar {
