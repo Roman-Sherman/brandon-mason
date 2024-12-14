@@ -38,3 +38,10 @@
 .mantine-Button-root {
     width: rem(300px);
 }
+
+.resumeRoot {
+    display: none;
+    @media (max-width: 48em) {
+        display: block;
+    }
+}

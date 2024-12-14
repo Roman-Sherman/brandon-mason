@@ -3,6 +3,12 @@
 }
 
 .title {
+    font-size: 3.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* .title {
     color: var(--mantine-color-zomp);
     font-size: rem(25px);
 
@@ -22,7 +28,7 @@
         font-size: rem(90px);
         line-height: rem(50px);
     }
-}
+} */
 
 .introtext {
     font-size: rem(20px);

@@ -1,6 +1,7 @@
 import { Burger, Container, Group, MantineComponent, Modal } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './Header.module.css';
+import { forwardRef } from 'react';
 
 interface Link {
     link: string;
@@ -11,8 +12,10 @@ interface Link {
 }
 
 interface HeaderProps {
+    ref: React.MutableRefObject<any>;
     scroll: boolean;
     refObj: {
+
         Home: React.MutableRefObject<any>;
         About: React.MutableRefObject<any>;
         Projects: React.MutableRefObject<any>;
@@ -21,15 +24,15 @@ interface HeaderProps {
     scrollIntoView: (ref: React.MutableRefObject<any>) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ scroll, refObj, scrollIntoView }) => {
+const Header = forwardRef<MantineComponent<any>, HeaderProps>((props, headerRef) => {
     const [opened, { open, close }] = useDisclosure();
 
     const links: Link[] = [
-        { link: '/#home', label: 'Home', ref: refObj.Home },
-        { link: '/#about', label: 'About', ref: refObj.About },
-        { link: '/#projects', label: 'Projects', ref: refObj.Projects },
-        { link: '/#resume', label: 'Resume', ref: refObj.Resume },
-        { link: '/#contact', label: 'Contact' },
+        { link: '/#home', label: 'Home', ref: props.refObj.Home },
+        { link: '/#about', label: 'About', ref: props.refObj.About },
+        { link: '/#projects', label: 'Projects', ref: props.refObj.Projects },
+        { link: '/#resume', label: 'Resume', ref: props.refObj.Resume },
+        { link: '/#contact', label: 'Contact Me' },
         // { link: 'https://docs.google.com/document/d/1AQZoarByG7TqT1GTa6TpMQrMAzRy5fyqJ4XqPzxWmjw/preview', label: 'Resume', target: '_blank' },
     ];
 
@@ -41,18 +44,19 @@ const Header: React.FC<HeaderProps> = ({ scroll, refObj, scrollIntoView }) => {
         className={classes.link}
         onClick={() => {
             if (link.ref && link.ref.current) {
-                scrollIntoView((link.ref as MantineComponent<any>));
+                props.scrollIntoView((link.ref as MantineComponent<any>));
                 close();
             }
         }}
         >
         {link.label}
         </a>
+        
     ));
 
     return (
         <>
-            <header id="header" style={{ boxShadow: (scroll) ? 'rgba(0, 0, 0, 0.15) 0px 3px 8px 0px' : 'none' }}>
+            <header ref={headerRef} id="header" style={{ boxShadow: (props.scroll) ? 'rgba(0, 0, 0, 0.15) 0px 3px 8px 0px' : 'none' }}>
                 <Container className={classes.inner} fluid >
                     <Group gap={5} visibleFrom="xs">
                     {items}
@@ -77,6 +81,6 @@ const Header: React.FC<HeaderProps> = ({ scroll, refObj, scrollIntoView }) => {
             </header>
         </>
     );
-};
+});
 
 export default Header;

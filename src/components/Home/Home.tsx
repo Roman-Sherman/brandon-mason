@@ -1,8 +1,9 @@
-import { Button, Flex, MantineComponent, Stack, Text, Title } from '@mantine/core';
+import { Anchor, Button, Flex, MantineComponent, Stack, Text, Title } from '@mantine/core';
 import classes from './Home.module.css';
 import { forwardRef } from 'react';
 
 interface HomeProps {
+    headerHeight: number;
     buttonRef: React.MutableRefObject<any>;
     projectRef: React.MutableRefObject<any>;
     scrollIntoView: (ref: React.MutableRefObject<any>) => void;
@@ -30,6 +31,7 @@ const Home = forwardRef<MantineComponent<any>, HomeProps>((props, homeRef) => {
                 I am pursuing a <strong>Bachelor of Science in Computer Science</strong> degree at Texas State University. 
                 I will be graduating in December 2025, and I would love to work for your company this summer. 
                 </Text>
+                <Text classNames={{root: classes.resumeRoot}} > You can view my <Anchor href='https://docs.google.com/document/d/1AQZoarByG7TqT1GTa6TpMQrMAzRy5fyqJ4XqPzxWmjw/preview' target='_blank'>resume here</Anchor></Text>
                 <Button 
                     color={'var(--mantine-color-viridian)'} 
                     size='md'

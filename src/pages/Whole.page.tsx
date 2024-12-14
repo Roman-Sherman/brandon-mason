@@ -6,10 +6,13 @@ import { useEffect, useState, useRef } from 'react';
 import Projects from '@/components/Projects/Projects';
 import AboutMe from '@/components/AboutMe/AboutMe';
 import Resume from '@/components/Resume/Resume';
+import { useElementSize } from '@mantine/hooks';
 
+//TODO: Scroll page to section of id in URI.
 const WholePage: React.FC = () => {
     const [scroll, setScroll] = useState(false);
 	const scrollareaRef = useRef<MantineComponent<any>>(null);
+	// const headerRef = useRef<MantineComponent<any>>(null);
 	const homeRef = useRef<MantineComponent<any>>(null);
 	const aboutRef = useRef<MantineComponent<any>>(null);
 	const projectRef = useRef<MantineComponent<any>>(null);
@@ -21,6 +24,7 @@ const WholePage: React.FC = () => {
 				"Projects":projectRef,
 				"Resume":resumeRef,
 			};
+	const { ref, width, height } = useElementSize();
 
 	const scrollIntoView = (ref: React.MutableRefObject<any>) => {
 		if (ref.current && scrollareaRef.current) {
@@ -35,12 +39,12 @@ const WholePage: React.FC = () => {
 				thumb: classes.thumb,
 				scrollbar: classes.scrollbar,
 			}} onScrollPositionChange={(position: { x: number; y: number }) => setScroll((position.y > 0) ? true : false)}>
-				<Header scroll={scroll} refObj={refObj} scrollIntoView={scrollIntoView}/>
-				<Container classNames={{root: classes.containerRoot}}>
-					<Home buttonRef={buttonRef} ref={refObj.Home} projectRef={refObj.Projects} scrollIntoView={scrollIntoView}/>
-					<AboutMe ref={refObj.About}/>
-					<Projects ref={refObj.Projects}/>
-					<Resume ref={refObj.Resume}/>
+				<Header ref={ref} scroll={scroll} refObj={refObj} scrollIntoView={scrollIntoView}/>
+				<Container classNames={{root: classes.containerRoot}} miw={'90%'} pr={'10vw'}>
+					<Home ref={refObj.Home} headerHeight={height} buttonRef={buttonRef} projectRef={refObj.Projects} scrollIntoView={scrollIntoView}/>
+					<AboutMe ref={refObj.About} headerHeight={height}/>
+					<Projects ref={refObj.Projects} headerHeight={height}/>
+					<Resume ref={refObj.Resume} headerHeight={height}/>
 				</Container>
 			</ScrollArea>
 		</>
