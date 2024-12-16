@@ -15,13 +15,14 @@ interface HeaderProps {
     ref: React.MutableRefObject<any>;
     scroll: boolean;
     refObj: {
-
         Home: React.MutableRefObject<any>;
         About: React.MutableRefObject<any>;
         Projects: React.MutableRefObject<any>;
         Resume: React.MutableRefObject<any>;
     };
-    scrollIntoView: (ref: React.MutableRefObject<any>) => void;
+    setSelectedSection: (ref: React.MutableRefObject<any>) => void;
+    setHash: (value: string) => void;
+    // scrollIntoView: (ref: React.MutableRefObject<any>) => void;
 }
 
 const Header = forwardRef<MantineComponent<any>, HeaderProps>((props, headerRef) => {
@@ -44,7 +45,7 @@ const Header = forwardRef<MantineComponent<any>, HeaderProps>((props, headerRef)
         className={classes.link}
         onClick={() => {
             if (link.ref && link.ref.current) {
-                props.scrollIntoView((link.ref as MantineComponent<any>));
+                props.setSelectedSection(link.ref);
                 close();
             }
         }}
@@ -65,7 +66,7 @@ const Header = forwardRef<MantineComponent<any>, HeaderProps>((props, headerRef)
                     <Burger opened={opened} onClick={(opened) ? close : open} hiddenFrom="xs" size="lg" className={classes.burger}/>
 
                 </Container>
-                <Modal opened={opened} onClose={close} withCloseButton={false} yOffset={0} closeOnClickOutside transitionProps={{transition: 'slide-left'}} 
+                <Modal opened={opened} onClose={close} withCloseButton={false} yOffset={0} closeOnClickOutside transitionProps={{transition: 'slide-left'}}
                     className={classes.modal}
                     classNames={{
                         root: classes.modalRoot,
@@ -74,6 +75,7 @@ const Header = forwardRef<MantineComponent<any>, HeaderProps>((props, headerRef)
                         inner: classes.modalInner,
                         body: classes.modalBody,
                         content: classes.modalContent,
+                        overlay: classes.modalOverlay,
                     }}
                 >
                     {items}

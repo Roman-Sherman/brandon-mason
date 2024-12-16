@@ -9,8 +9,6 @@ interface AboutMeProps {
 }
 
 const AboutMe = forwardRef<MantineComponent<any>, AboutMeProps>((props, aboutRef) => {
-    const { height, width } = useViewportSize();
-
     return (
         <Container mih={'100vh'} pt={`calc(${props.headerHeight}px + 1vh`} px={0} ml={0} ref={aboutRef}>
             <Title order={2} className={classes.title}>About Me</Title>

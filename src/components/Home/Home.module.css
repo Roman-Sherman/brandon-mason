@@ -14,7 +14,7 @@
     font-size: rem(20px);
 
     @media (max-width: 48em) {
-        font-size: rem(23px);
+        font-size: rem(20px);
     }
     @media (min-width: 48em) {
         font-size: rem(25px);

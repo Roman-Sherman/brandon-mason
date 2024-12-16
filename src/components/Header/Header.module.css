@@ -79,6 +79,11 @@ header {
   focus {
     color: var(--mantine-color-viridian);
   }
+
+}
+
+.modalBody > .link {
+  color: var(--mantine-color-mint);
 }
 
 .modalRoot {
@@ -107,6 +112,10 @@ header {
   grid-template-columns: auto;
   grid-template-rows: auto; 
   height: 35%;
+}
+
+.modalOverlay {
+  /* opacity: .35 !important; */
 }
 
 .filler {
